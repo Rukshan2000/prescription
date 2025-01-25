@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medi Care Medicine Order Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+    </style>
+</head>
+
+<body class="bg-blue-100">
+
+    <!-- Top Navbar -->
+    <header class="bg-blue-500 text-white py-4 shadow-md">
+
+        <nav class="bg-white dark:bg-blue-500 fixed w-full z-20 top-0 start-0 border-b border-blue-200 dark:border-blue-600">
+            <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+                <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
+                    <h1 class="text-3xl font-bold">Medi Care</h1>
+                </a>
+                <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+                    <button type="button"
+                    onclick="window.location.href='order.php';"
+                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-800 dark:hover:bg-blue-900 dark:focus:ring-blue-800">
+                    Order
+                </button>
+                
+                    <button id="toggleButton" data-collapse-toggle="navbar-sticky" type="button"
+                        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-blue-500 rounded-lg md:hidden hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-200 dark:text-blue-400 dark:hover:bg-blue-700 dark:focus:ring-blue-600"
+                        aria-controls="navbar-sticky" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 17 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M1 1h15M1 7h15M1 13h15" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+                    <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-blue-100 rounded-lg bg-blue-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-blue-800 md:dark:bg-blue-500 dark:border-blue-700">
+                        <li>
+                            <a href="#home" class="block py-2 px-3 text-blue-500 rounded hover:bg-blue-100 md:hover:bg-transparent md:hover:underline md:p-0 dark:text-white dark:hover:bg-transparent dark:hover:underline">Home</a>
+                        </li>
+                        <li>
+                            <a href="#about" class="block py-2 px-3 text-blue-500 rounded hover:bg-blue-100 md:hover:bg-transparent md:hover:underline md:p-0 dark:text-white dark:hover:bg-transparent dark:hover:underline">About</a>
+                        </li>
+                        <li>
+                            <a href="displayMedicine.php" class="block py-2 px-3 text-blue-500 rounded hover:bg-blue-100 md:hover:bg-transparent md:hover:underline md:p-0 dark:text-white dark:hover:bg-transparent dark:hover:underline">Products</a>
+                        </li>
+                        <li>
+                            <a href="#services" class="block py-2 px-3 text-blue-500 rounded hover:bg-blue-100 md:hover:bg-transparent md:hover:underline md:p-0 dark:text-white dark:hover:bg-transparent dark:hover:underline">Services</a>
+                        </li>
+                        <li>
+                            <a href="#contact" class="block py-2 px-3 text-blue-500 rounded hover:bg-blue-100 md:hover:bg-transparent md:hover:underline md:p-0 dark:text-white dark:hover:bg-transparent dark:hover:underline">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                
+            </div>
+        </nav>
+
+    </header>
+
+    <!-- Cover Image -->
+    <section id="home" class="relative">
+        <img src="assets/cover.jpg" alt="Cover Image" class="w-full h-64 object-cover">
+        <div class="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center text-center text-white">
+            <h2 class="text-4xl text-blue-500 font-bold">Welcome to Medi Care</h2>
+            <p class="text-lg text-blue-500 mt-2">Your trusted partner in providing medicines quickly and efficiently.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container mx-auto mt-10 px-6">
+
+        <!-- Services Section -->
+        <section id="services" class="mb-16">
+            <div class="bg-blue-50 p-8 rounded-lg shadow-lg">
+                <h2 class="text-3xl font-bold text-center mb-6">Our Services</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-bold text-blue-500">Medicine Delivery</h3>
+                        <p class="mt-4 text-blue-600">Get your medicines delivered to your door within hours, with
+                            reliable and efficient service.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-bold text-blue-500">Medi Care Consultation</h3>
+                        <p class="mt-4 text-blue-600">Speak to our licensed pharmacists for guidance on prescriptions,
+                            over-the-counter medications, and more.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="mb-16">
+            <div class="bg-blue-50 p-8 rounded-lg shadow-lg">
+                <h2 class="text-3xl font-bold text-center mb-6">About Us</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <!-- Left Column: Text Content -->
+                    <div>
+                        <p class="text-lg text-blue-600">At Medi Care, we aim to simplify your access to medicines and health care. Our team is dedicated to ensuring that you receive high-quality products and services with the utmost convenience.</p>
+                    </div>
+                    
+                    <!-- Right Column: Image -->
+                    <div>
+                        <img src="assets/about.jpg" alt="About Us Image" class="w-full rounded-lg shadow-md">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+        <!-- Contact Us Section -->
+        <section id="contact" class="mb-16">
+            <div class="bg-blue-50 p-8 rounded-lg shadow-lg">
+                <h2 class="text-3xl font-bold text-center mb-6">Contact Us</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Left Column: Contact Details -->
+                    <div>
+                        <div class="text-center md:text-left">
+                            <p class="text-lg text-blue-600">Phone: +1 123 456 7890</p>
+                            <p class="text-lg text-blue-600">Email: info@Medi Care.com</p>
+                            <p class="text-lg text-blue-600">Address: 123 Main Street, City, Country</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Column: Google Map -->
+                    <div>
+                        <iframe class="w-full h-64 rounded-lg shadow-md"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345093747!2d144.95592331531895!3d-37.81720977975153!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf5779f7b230c83b1!2sVictoria%20Market!5e0!3m2!1sen!2sau!4v1631578257623!5m2!1sen!2sau"
+                            allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+    </div>
+
+<!-- Footer -->
+<footer class="bg-blue-500 text-white py-8 mt-10">
+    <div class="container mx-auto flex flex-col md:flex-row justify-between items-center px-6">
+        <!-- Left: About Us -->
+        <div class="text-center md:text-left mb-6 md:mb-0">
+            <h3 class="font-bold text-lg">About Us</h3>
+            <p class="text-sm text-blue-200 mt-2">We aim to simplify access to<br>medicines and<br> health care with convenience and reliability.</p>
+        </div>
+
+        <!-- Middle: Important Links (Vertical) -->
+        <div class="text-center md:text-left mt-4 md:mt-0">
+            <h3 class="font-bold text-lg mb-4">Important Links</h3>
+            <div class="space-y-1">
+                <a href="#home" class="block hover:text-blue-200">Home</a>
+                <a href="#services" class="block hover:text-blue-200">Services</a>
+                <a href="#about" class="block hover:text-blue-200">About Us</a>
+                <a href="#contact" class="block hover:text-blue-200">Contact Us</a>
+            </div>
+        </div>
+
+        <!-- Right: Contact Info -->
+        <div class="text-center md:text-right mt-4 md:mt-0">
+            <p class="text-sm text-blue-200">Phone: +1 123 456 7890</p>
+            <p class="text-sm text-blue-200">Email: info@Medi Care.com</p>
+            <p class="text-sm text-blue-200">Address: 123 Main Street, City, Country</p>
+        </div>
+    </div>
+
+    <!-- Bottom: Copyright -->
+    <div class="text-center mt-6 bg-blue-500 py-8">
+        <p class="text-sm text-white">&copy; 2025 Medi Care. All Rights Reserved.</p>
+    </div>
+    
+</footer>
+
+
+    <script>
+        // Toggle button functionality for mobile menu
+        const toggleButton = document.getElementById('toggleButton');
+        const navLinks = document.getElementById('navbar-sticky');
+        
+        toggleButton.addEventListener('click', () => {
+            navLinks.classList.toggle('hidden');
+            toggleButton.classList.toggle('open');
+        });
+    </script>
+</body>
+
+</html>

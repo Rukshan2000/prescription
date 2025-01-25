@@ -37,10 +37,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Admin User</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.0/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 </head>
 <body class="bg-gray-100">
     <!-- Side Navigation -->
-    <div class="w-64 bg-gray-800 text-white h-screen px-4 py-8 flex flex-col">
+    <div class="w-64 bg-gray-800 text-white h-screen px-4 py-8 fixed  top-0">
     <h1 class="text-2xl font-semibold text-center mb-6">Admin Panel</h1>
     <ul class="flex-grow">
         <!-- Dashboard Section -->
@@ -90,7 +92,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </ul>
 
     <!-- Logout Button -->
-    <div class="mt-auto">
+    <div class="mt-48">
         <a href="admin_login.php">
             <button class="w-full bg-red-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-red-400">
                 Logout
@@ -98,7 +100,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </a>
     </div>
 </div>
-    <div class="ml container mx-auto p-6">
+
+
+    <!-- Add Font Awesome CDN -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <script>
+        // Function to toggle the visibility of sub-navigation and change arrow direction
+        function toggleSubNav(subNavId, element) {
+            const subNav = document.getElementById(subNavId);
+            const icon = element.querySelector('i');
+
+            subNav.classList.toggle('hidden');
+            icon.classList.toggle('fa-chevron-down');
+            icon.classList.toggle('fa-chevron-up');
+        }
+    </script>
+    <div class="container mx-auto p-6">
         <div class="max-w-md mx-auto bg-white p-8 rounded-lg shadow-md">
             <h2 class="text-2xl font-bold mb-6 text-center">Create Admin User</h2>
 

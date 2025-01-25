@@ -109,7 +109,7 @@ if (isset($_POST['export_csv'])) {
         </li>
 
         <li>
-            <a href="_create_admin.php" class="block py-2 px-4 hover:bg-gray-700 rounded-md flex items-center">
+            <a href="create_admin.php" class="block py-2 px-4 hover:bg-gray-700 rounded-md flex items-center">
                 <span>Create Admin</span>
             </a>
         </li>
@@ -130,7 +130,7 @@ if (isset($_POST['export_csv'])) {
     </ul>
 
     <!-- Logout Button -->
-    <div class="mt-80">
+    <div class="mt-48">
         <a href="admin_login.php">
             <button class="w-full bg-red-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-red-400">
                 Logout

@@ -39,10 +39,92 @@ $conn->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doctor Verification</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 </head>
 <body class="bg-gray-100 font-sans">
+        <!-- Side Navigation -->
+        <div class="w-64 bg-gray-800 text-white h-screen px-4 py-8 fixed  top-0">
+        <h1 class="text-2xl font-semibold text-center mb-6">Admin Panel</h1>
+        <ul class="flex-grow">
+            <!-- Dashboard Section -->
+            <li>
+                <a href="dashboard.php" class="block py-2 px-4 hover:bg-gray-700 rounded-md flex items-center">
+                    <span>Dashboard</span>
+                </a>
+            </li>
 
-    <div class="flex justify-center items-center min-h-screen bg-gray-100 py-8 px-4">
+            <!-- Orders Section -->
+            <li>
+                <a href="admin.php" class="block py-2 px-4 hover:bg-gray-700 rounded-md flex items-center">
+                    <span>Orders</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="rejected.php" class="block py-2 px-4 hover:bg-gray-700 rounded-md flex items-center">
+                    <span>Rejected Orders</span>
+                </a>
+            </li>
+            <li>
+                <a href="verify_doctor.php" class="block py-2 px-4 hover:bg-gray-700 rounded-md flex items-center">
+                    <span>Doctor Verification</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="create_admin.php" class="block py-2 px-4 hover:bg-gray-700 rounded-md flex items-center">
+                    <span>Create Admin</span>
+                </a>
+            </li>
+
+            <!-- Reports Section -->
+            <li>
+                <a href="javascript:void(0)" onclick="toggleSubNav('rejectedOrdersSubNav', this)"
+                    class="block py-2 px-4 hover:bg-gray-700 rounded-md flex items-center">
+                    <span>Reports</span>
+                    <i class="fas fa-chevron-down ml-2"></i>
+                </a>
+                <ul id="rejectedOrdersSubNav" class="ml-4 hidden">
+                    <li><a href="medicine_sales_report.php"
+                            class="block py-2 px-4 hover:bg-gray-600 rounded-md">Medicine sales Report</a></li>
+                    <li><a href="order_report.php" class="block py-2 px-4 hover:bg-gray-600 rounded-md">Order Report</a>
+                    </li>
+                    <li><a href="inventory_report.php" class="block py-2 px-4 hover:bg-gray-600 rounded-md">Inventory
+                            Report</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <!-- Logout Button -->
+        <div class="mt-48">
+            <a href="admin_login.php">
+                <button
+                    class="w-full bg-red-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-red-400">
+                    Logout
+                </button>
+            </a>
+        </div>
+    </div>
+
+
+    <!-- Add Font Awesome CDN -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <script>
+        // Function to toggle the visibility of sub-navigation and change arrow direction
+        function toggleSubNav(subNavId, element) {
+            const subNav = document.getElementById(subNavId);
+            const icon = element.querySelector('i');
+
+            subNav.classList.toggle('hidden');
+            icon.classList.toggle('fa-chevron-down');
+            icon.classList.toggle('fa-chevron-up');
+        }
+    </script>
+
+
+    <div class="ml-64 flex justify-center items-center min-h-screen bg-gray-100 py-8 px-4">
         <div class="max-w-lg w-full bg-white shadow-lg rounded-lg p-6 space-y-6">
             <h1 class="text-3xl font-semibold text-center text-gray-800">Doctor Verification</h1>
 

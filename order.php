@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                         $notification = "Order placed successfully!";
                         $notification_class = "bg-green-500 text-white";
-                        echo "<script>setTimeout(function(){ window.location.href = 'home.html'; }, 2000);</script>";
+                        echo "<script>setTimeout(function(){ window.location.href = 'index.html'; }, 2000);</script>";
                     } else {
                         $notification = "Error uploading the prescription file.";
                         $notification_class = "bg-red-500 text-white";
@@ -92,9 +92,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 $notification = "The doctor is not registered. Order rejected and prescription file saved.";
                 $notification_class = "bg-red-500 text-white";
+                echo "<script>setTimeout(function(){ window.location.href = 'index.html'; }, 2000);</script>";
+
             } else {
                 $notification = "Error uploading the rejected prescription file.";
                 $notification_class = "bg-red-500 text-white";
+                echo "<script>setTimeout(function(){ window.location.href = 'index.html'; }, 2000);</script>";
+
             }
         }
     }
@@ -109,6 +113,56 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Prescription Order</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
+  <!-- Top Navbar -->
+  <header class="bg-blue-500 text-white py-4 shadow-md">
+
+<nav class="bg-white dark:bg-blue-500 fixed w-full z-20 top-0 start-0 border-b border-blue-200 dark:border-blue-600">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <h1 class="text-3xl font-bold">Medi Care</h1>
+        </a>
+        <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+            <button type="button"
+            onclick="window.location.href='order.php';"
+            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-800 dark:hover:bg-blue-900 dark:focus:ring-blue-800">
+            Order
+        </button>
+        
+            <button id="toggleButton" data-collapse-toggle="navbar-sticky" type="button"
+                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-blue-500 rounded-lg md:hidden hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-200 dark:text-blue-400 dark:hover:bg-blue-700 dark:focus:ring-blue-600"
+                aria-controls="navbar-sticky" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 17 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M1 1h15M1 7h15M1 13h15" />
+                </svg>
+            </button>
+        </div>
+        <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+            <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-blue-100 rounded-lg bg-blue-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-blue-800 md:dark:bg-blue-500 dark:border-blue-700">
+                <li>
+                    <a href="index.html#home" class="block py-2 px-3 text-blue-500 rounded hover:bg-blue-100 md:hover:bg-transparent md:hover:underline md:p-0 dark:text-white dark:hover:bg-transparent dark:hover:underline">Home</a>
+                </li>
+                <li>
+                    <a href="index.html#about" class="block py-2 px-3 text-blue-500 rounded hover:bg-blue-100 md:hover:bg-transparent md:hover:underline md:p-0 dark:text-white dark:hover:bg-transparent dark:hover:underline">About</a>
+                </li>
+                <li>
+                    <a href="index.htmldisplayMedicine.php" class="block py-2 px-3 text-blue-500 rounded hover:bg-blue-100 md:hover:bg-transparent md:hover:underline md:p-0 dark:text-white dark:hover:bg-transparent dark:hover:underline">Products</a>
+                </li>
+                <li>
+                    <a href="index.html#services" class="block py-2 px-3 text-blue-500 rounded hover:bg-blue-100 md:hover:bg-transparent md:hover:underline md:p-0 dark:text-white dark:hover:bg-transparent dark:hover:underline">Services</a>
+                </li>
+                <li>
+                    <a href="index.html#contact" class="block py-2 px-3 text-blue-500 rounded hover:bg-blue-100 md:hover:bg-transparent md:hover:underline md:p-0 dark:text-white dark:hover:bg-transparent dark:hover:underline">Contact</a>
+                </li>
+            </ul>
+        </div>
+        
+    </div>
+</nav>
+
+</header>
 <body class="bg-gray-100 min-h-screen flex items-center justify-center">
 
     <?php if (!empty($notification)): ?>
