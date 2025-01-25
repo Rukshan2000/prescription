@@ -166,7 +166,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body class="bg-gray-100 min-h-screen flex items-center justify-center">
 
     <?php if (!empty($notification)): ?>
-    <div class="fixed top-0 left-0 w-full p-4 text-center <?php echo $notification_class; ?>">
+    <div class="fixed bottom-0 left-0 w-full p-4 text-center <?php echo $notification_class; ?>">
         <?php echo $notification; ?>
     </div>
     <?php endif; ?>
