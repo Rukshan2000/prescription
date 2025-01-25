@@ -72,6 +72,13 @@ while ($row = $result_order_status->fetch_assoc()) {
                 </a>
             </li>
 
+            
+        <li>
+            <a href="medicine.php" class="block py-2 px-4 hover:bg-gray-700 rounded-md flex items-center">
+                <span>Medicines</span>
+            </a>
+        </li>
+
             <li>
                 <a href="rejected.php" class="block py-2 px-4 hover:bg-gray-700 rounded-md flex items-center">
                     <span>Rejected Orders</span>
